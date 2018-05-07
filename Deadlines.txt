@@ -1,0 +1,20 @@
+Timeline:
+
+
+Write-up
+5/12 Introduction write-up
+
+Code
+
+5/12 
+Data cleaning (tokenization + garbage code clean-up)
+Create LSTM / CNN for this embedding
+Implement regular loss
+
+
+Implement triplet loss 
+
+Compare with baseline (original word embedding with CNN)
+Compare with CrossEntropyLoss
+
+Analysis 
