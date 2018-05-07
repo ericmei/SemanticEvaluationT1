@@ -11,6 +11,8 @@ Data cleaning (tokenization + garbage code clean-up)
 Create LSTM / CNN for this embedding
 Implement regular loss
 
+Implement attention
+
 
 Implement triplet loss 
 
