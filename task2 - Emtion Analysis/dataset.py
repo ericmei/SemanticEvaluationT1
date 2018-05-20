@@ -7,11 +7,8 @@ from torch.utils.data import DataLoader
 import pandas as pd
 import numpy as np
 import collections
-import re
 import math
 from torchvision import datasets, transforms
-from collections import Counter
-from collections import deque
 #from sklearn.model_selection import StratifiedShuffleSplit
 import os
 import operator

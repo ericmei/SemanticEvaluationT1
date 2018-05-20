@@ -7,7 +7,6 @@ import numpy as np
 import dataloader
 from convnet import ConvNet
 from torch.autograd import Variable
-import numpy as np
 
 def main():
     train_loader, dataset = dataloader.generateLoadedData()
