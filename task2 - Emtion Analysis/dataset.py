@@ -17,6 +17,9 @@ import en_core_web_sm
 
 #This file uses Spacy-- use pip install for installation. instructions at https://github.com/explosion/spaCy#updating-spacy
 #trimLenMultiple is used to trim the data to be a nice length for training
+#
+# x-data: vector of maxTweetLen x numTweets
+# y-data: vector of 2 (emotion, intensity) x numTweets
 class MyData(Dataset):
     def __init__(self, path, train, trimLenMultiple):
         wholeText = ""
@@ -44,7 +47,7 @@ class MyData(Dataset):
                     currentSentenceVectorized = get_word_indices(processedTweet, self.word2idx)
 
                     vectorizedTweets.append(currentSentenceVectorized)
-                    tweetEmotions.append([self.emotionDict[affectDimension]])
+                    tweetEmotions.append([self.emotionDict[affectDimension], intensityScore])
 
         maxTweetLen = get_max_tweet_length(vectorizedTweets)
         pad_sentences(maxTweetLen, vectorizedTweets, self.word2idx)
