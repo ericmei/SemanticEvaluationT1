@@ -23,7 +23,7 @@ import en_core_web_sm
 class MyData(Dataset):
     def __init__(self, path, train, trimLenMultiple):
         wholeText = ""
-        wordCounter = Counter()
+        #wordCounter = Counter()
         nlp = en_core_web_sm.load()
         self.word2idx = {'UNK': 0, 'PAD': 1} # UNK is for unknown word
         self.emotionDict = {'anger': 0, 'fear': 1, 'joy': 2, 'sadness': 3}
@@ -47,7 +47,7 @@ class MyData(Dataset):
                     currentSentenceVectorized = get_word_indices(processedTweet, self.word2idx)
 
                     vectorizedTweets.append(currentSentenceVectorized)
-                    tweetEmotions.append([self.emotionDict[affectDimension], intensityScore])
+                    tweetEmotions.append([self.emotionDict[affectDimension]])
 
         maxTweetLen = get_max_tweet_length(vectorizedTweets)
         pad_sentences(maxTweetLen, vectorizedTweets, self.word2idx)
